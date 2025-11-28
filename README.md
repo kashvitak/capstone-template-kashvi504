@@ -37,12 +37,74 @@ Expain how this project is aligned with this course content.
 ## Plan
 
 I plan to excecute these steps to complete my project.
+[TODO] Step 1: Set up project structure and environment
+- Fork the MAT496 repository and create a new project folder for the Invention Assistant.
+- Add a basic folder structure: src/, data/, docs/, notebooks/.
+- Create an empty main Python file for the LangGraph app (e.g., src/invention_assistant_graph.py).
+- Install minimal dependencies (langgraph, langchain, faiss-cpu, requests).
 
-- [TODO] Step 1 involves blah blah
-- [TODO] Step 2 involves blah blah
-- [TODO] Step 3 involves blah blah
-- ...
-- [TODO] Step n involves blah blah
+[TODO] Step 2: Implement basic LangGraph with a single analyst (no RAG)
+- Define the LangGraph state (invention_description, contexts, analyses, transcript, scorecard).
+- Implement a single node that acts as one analyst (Engineer persona) with a system prompt only.
+- Build a minimal StateGraph with START → Engineer node → Scorecard node → END.
+- Add a simple CLI/runner function to take user input and print a basic evaluation.
+
+[TODO] Step 3: Test and refine the single‑analyst flow
+- Run the graph with a few sample invention descriptions.
+- Adjust the prompts to make responses more structured (hazards + recommendations).
+- Ensure the basic graph execution and state updates are working correctly.
+
+[TODO] Step 4: Extend the graph to use all four analysts (Engineer, Philosopher, Economist, Visionary)
+- Add separate persona prompts for each analyst.
+- Create individual nodes (or a shared node function) for each persona’s analysis.
+- Modify the graph to run all four analyses and store them in the state.
+- Implement a scorecard node that combines all analyses into one unified evaluation.
+
+[TODO] Step 5: Collect raw reference content for each analyst domain
+- Identify and list data sources (technical papers, ethics essays, market reports, foresight studies).
+- Download or copy text content into the project’s data/ folder (separate subfolders per analyst).
+- Normalize the content into plain text files ready for preprocessing.
+
+[TODO] Step 6: Preprocess and chunk the reference content
+- Write a preprocessing script to clean and chunk the raw text (remove formatting noise).
+- Split content into semantically meaningful chunks suitable for retrieval.
+- Save the processed chunks in a structured format (e.g., JSON or plain text per analyst).
+
+[TODO] Step 7: Build a simple RAG pipeline for each analyst
+- Create embeddings for the processed chunks using an embedding model.
+- Store the embeddings in a vector store (e.g., FAISS).
+- Implement a retrieval function that, given an analyst and a query, returns the top‑k relevant chunks.
+- Test retrieval independently with a few example queries.
+
+[TODO] Step 8: Integrate RAG into the LangGraph nodes
+- Update each analyst node to call the retrieval function and include retrieved chunks in the prompt.
+- Ensure the analysis combines:
+(a) the user’s invention description, and
+(b) domain knowledge retrieved from that analyst’s data.
+- Verify that the state correctly stores enriched analyses using RAG‑enabled responses.
+
+[TODO] Step 9: Polish the transcript and scorecard structure
+- Design a clear, structured transcript format (dialogue style with citations).
+- Update the scorecard node prompt to always follow rubric dimensions (Technical Rigor, Originality, Feasibility, Impact).
+- Add section headings and bullet points so the output looks like a professional evaluation report.
+
+[TODO] Step 10: Create sample scenarios and test the full pipeline
+- Prepare multiple sample inventions (e.g., AI classroom assistant, sustainable energy device, medical diagnostic tool).
+- Run the full graph for each scenario and save example outputs in docs/ or notebooks/.
+- Adjust prompts, retrieval parameters, or graph flow based on test results to improve clarity and usefulness.
+
+[TODO] Step 11: Document the project and alignment with MAT496 concepts
+- Write an Overview section describing the Invention Assistant and its purpose.
+- Explain how the project uses prompting, structured output, semantic search, RAG, tool calling, and LangGraph (state + nodes + graph).
+- Add usage instructions (how to run the graph, how to add more data) to the README or report file.
+
+[TODO] Step 12: Final cleanup and preparation for submission
+- Review and refactor the code for readability and comments.
+- Ensure [TODO] markers are changed to [DONE] for all completed steps before final commit.
+- Check commit history shows work spread across at least two different dates.
+- Verify all required files (code, plan, report, sample outputs) are pushed to the forked repository.
+
+
 
 ## Conclusion:
 
