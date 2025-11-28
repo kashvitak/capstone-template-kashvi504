@@ -73,19 +73,25 @@ def _build_markdown_report(title: str, result: dict) -> str:
     lines = [
         f"# Invention Assessment: {title}\n",
         f"**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n",
-        "\n## Analyst Transcript\n",
+        "\n## Analyst Panel Transcript\n",
     ]
     
-    # Add transcript entries
+    # Add transcript entries grouped by role
     transcript = result.get("transcript", [])
+    roles_seen = set()
     for entry in transcript:
         role = entry.get("role", "Unknown")
         message = entry.get("message", "")
-        lines.append(f"### {role}\n")
+        
+        # Add role header only on first appearance
+        if role not in roles_seen:
+            lines.append(f"### {role}\n")
+            roles_seen.add(role)
+        
         lines.append(f"{message}\n")
     
     # Add scorecard
-    lines.append("\n## Scorecard\n")
+    lines.append("\n## Aggregated Scorecard\n")
     scorecard = result.get("scorecard", {})
     
     for dim in ["technical_rigor", "originality", "feasibility", "impact"]:
@@ -111,17 +117,17 @@ def _build_markdown_report(title: str, result: dict) -> str:
 
 
 def run_experiment(invention: dict) -> dict:
-    """Run the single Engineer persona analysis."""
+    """Run all four analyst personas in parallel."""
     logging.info("Running experiment for invention: %s", invention.get("title"))
     try:
         # Use absolute import path to avoid relative import issues
         import sys
         from pathlib import Path
         sys.path.insert(0, str(Path(__file__).parent))
-        from invention_assistant_graph import run_single_engineer
-        result = run_single_engineer(invention)
+        from invention_assistant_graph import run_all_analysts_parallel
+        result = run_all_analysts_parallel(invention)
     except Exception as e:
-        logging.error("Failed to run engineer runner: %s", e)
+        logging.error("Failed to run analysts: %s", e)
         result = {
             "status": "error",
             "error": str(e),

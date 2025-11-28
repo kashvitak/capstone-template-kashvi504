@@ -57,11 +57,14 @@ I plan to excecute these steps to complete my project.
 - Adjust the prompts to make responses more structured (hazards + recommendations).
 - Ensure the basic graph execution and state updates are working correctly.
 
-[TODO] Step 4: Extend the graph to use all four analysts (Engineer, Philosopher, Economist, Visionary)
+[DONE] Step 4: Extend the graph to use all four analysts (Engineer, Philosopher, Economist, Visionary)
 - Add separate persona prompts for each analyst.
-- Create individual nodes (or a shared node function) for each persona’s analysis.
+- Create individual nodes (or a shared node function) for each persona's analysis.
 - Modify the graph to run all four analyses and store them in the state.
 - Implement a scorecard node that combines all analyses into one unified evaluation.
+- Parallel execution using threading for efficiency.
+- Aggregated scoring (averaged across personas).
+- Full transcript combining all analyst perspectives.
 
 [TODO] Step 5: Collect raw reference content for each analyst domain
 - Identify and list data sources (technical papers, ethics essays, market reports, foresight studies).
