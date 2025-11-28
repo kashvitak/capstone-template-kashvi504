@@ -37,7 +37,7 @@ Expain how this project is aligned with this course content.
 ## Plan
 
 I plan to excecute these steps to complete my project.
-[TODO] Step 1: Set up project structure and environment
+[DONE] Step 1: Set up project structure and environment
 - Fork the MAT496 repository and create a new project folder for the Invention Assistant.
 - Add a basic folder structure: src/, data/, docs/, notebooks/.
 - Create an empty main Python file for the LangGraph app (e.g., src/invention_assistant_graph.py).
