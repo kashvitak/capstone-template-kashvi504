@@ -12,6 +12,13 @@ import logging
 from pathlib import Path
 from typing import Any, Dict
 
+# Load .env file at module import
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # python-dotenv not installed, skip loading
+
 
 def save_json(path: str, data: Dict[str, Any]) -> None:
     p = Path(path)
@@ -38,18 +45,20 @@ def llm_call(prompt: str, max_tokens: int = 512) -> Dict[str, Any]:
     api_key = os.environ.get("OPENAI_API_KEY")
     if api_key:
         try:
-            import openai
-            openai.api_key = api_key
+            from openai import OpenAI
+            client = OpenAI(api_key=api_key)
             logging.info("Using OpenAI API for LLM call (this may incur cost)")
-            # A simple completion using text-davinci-003 style interface;
-            # adjust model and parameters to your account and SDK.
-            resp = openai.Completion.create(
-                model="text-davinci-003",
-                prompt=prompt,
+            # Use chat completion interface (gpt-3.5-turbo or gpt-4)
+            resp = client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are an expert analyst. Return only valid JSON."},
+                    {"role": "user", "content": prompt}
+                ],
                 max_tokens=max_tokens,
                 temperature=0.2,
             )
-            text = resp.choices[0].text.strip()
+            text = resp.choices[0].message.content.strip()
             # Attempt to parse JSON from the response; fall back to raw text
             try:
                 return json.loads(text)

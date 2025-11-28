@@ -1,0 +1,7 @@
+langgraph
+langchain
+faiss-cpu
+openai
+requests
+python-dotenv
+

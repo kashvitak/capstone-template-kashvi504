@@ -11,7 +11,12 @@ import json
 import logging
 from typing import Any, Dict
 
-from . import prompts, utils
+try:
+    from . import prompts, utils
+except ImportError:
+    # Fallback for direct execution (not as package)
+    import prompts
+    import utils
 
 
 def build_engineer_prompt(invention: Dict[str, Any]) -> str:
