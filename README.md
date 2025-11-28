@@ -43,11 +43,14 @@ I plan to excecute these steps to complete my project.
 - Create an empty main Python file for the LangGraph app (e.g., src/invention_assistant_graph.py).
 - Install minimal dependencies (langgraph, langchain, faiss-cpu, requests).
 
-[TODO] Step 2: Implement basic LangGraph with a single analyst (no RAG)
+[DONE] Step 2: Implement basic LangGraph with a single analyst (no RAG)
 - Define the LangGraph state (invention_description, contexts, analyses, transcript, scorecard).
 - Implement a single node that acts as one analyst (Engineer persona) with a system prompt only.
 - Build a minimal StateGraph with START → Engineer node → Scorecard node → END.
 - Add a simple CLI/runner function to take user input and print a basic evaluation.
+- Added comprehensive CLI with file I/O, JSON + Markdown output persistence.
+- Integrated OpenAI API (mock fallback for offline dev).
+- Created test suite: schema validation + integration tests.
 
 [TODO] Step 3: Test and refine the single‑analyst flow
 - Run the graph with a few sample invention descriptions.
