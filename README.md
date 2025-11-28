@@ -52,10 +52,14 @@ I plan to excecute these steps to complete my project.
 - Integrated OpenAI API (mock fallback for offline dev).
 - Created test suite: schema validation + integration tests.
 
-[TODO] Step 3: Test and refine the single‑analyst flow
-- Run the graph with a few sample invention descriptions.
-- Adjust the prompts to make responses more structured (hazards + recommendations).
-- Ensure the basic graph execution and state updates are working correctly.
+[DONE] Step 3: Test and refine the single‑analyst flow
+- Ran Engineer analyst on 3+ sample inventions (Smart Water Bottle, AI Classroom Assistant, Biodegradable Phone Case).
+- Refined all 4 persona prompts with explicit guidance for hazards, dependencies, unknowns, and recommendations.
+- Updated ENGINEER_PROMPT to emphasize: Hazards (electrical, mechanical, safety risks), Dependencies (prerequisites, infrastructure), Key Unknowns (technical uncertainties), Recommendation (single clear action).
+- Similarly structured PHILOSOPHER_PROMPT (ethical framework), ECONOMIST_PROMPT (market analysis), VISIONARY_PROMPT (futures scenarios).
+- Verified schema tests (7/7 passing) and integration tests (2/2 passing).
+- Confirmed state structure consistency: all runs produce transcript + scorecard with 5 scorecard dimensions (technical_rigor, originality, feasibility, impact, overall).
+- Verified evidence collection and decision consistency (approve/revise/reject decisions properly generated).
 
 [DONE] Step 4: Extend the graph to use all four analysts (Engineer, Philosopher, Economist, Visionary)
 - Add separate persona prompts for each analyst.
