@@ -70,7 +70,7 @@ I plan to excecute these steps to complete my project.
 - Aggregated scoring (averaged across personas).
 - Full transcript combining all analyst perspectives.
 
-[TODO] Step 5: Collect raw reference content for each analyst domain
+[DONE] Step 5: Collect raw reference content for each analyst domain
 - Identify and list data sources (technical papers, ethics essays, market reports, foresight studies).
 - Download or copy text content into the project’s data/ folder (separate subfolders per analyst).
 - Normalize the content into plain text files ready for preprocessing.

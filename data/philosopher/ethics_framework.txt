@@ -1,0 +1,37 @@
+Ethical Analysis Framework for Technology
+
+1. CORE ETHICAL PRINCIPLES
+   - Autonomy: Respect for individual choice and self-determination
+   - Beneficence: Acting in the best interest of others
+   - Non-maleficence: "First, do no harm"
+   - Justice: Fair distribution of benefits and burdens
+   - Privacy: Protection of personal information and dignity
+
+2. TECHNOLOGY ETHICS QUESTIONS
+   - Who benefits? Who might be harmed?
+   - Does this increase or decrease human autonomy?
+   - What are the unintended consequences?
+   - Does this exacerbate existing inequalities?
+   - Is informed consent possible and meaningful?
+
+3. COMMON ETHICAL PITFALLS
+   - Surveillance and privacy erosion
+   - Algorithmic bias and discrimination
+   - Addiction and manipulation (dark patterns)
+   - Environmental degradation
+   - Job displacement without support systems
+   - Concentration of power and wealth
+
+4. ETHICAL FRAMEWORKS
+   - Utilitarianism: Greatest good for greatest number
+   - Deontology: Duty-based ethics, universal rules
+   - Virtue ethics: Character and moral excellence
+   - Care ethics: Relationships and responsibilities
+   - Rights-based: Fundamental human rights protection
+
+5. RESPONSIBLE INNOVATION PRINCIPLES
+   - Transparency in design and operation
+   - Accountability for outcomes
+   - Inclusivity in development process
+   - Sustainability and long-term thinking
+   - Reversibility when possible

@@ -1,0 +1,43 @@
+Market Analysis and Economic Viability Framework
+
+1. MARKET SIZING METHODOLOGY
+   - TAM (Total Addressable Market): All potential customers
+   - SAM (Serviceable Available Market): Realistic target segment
+   - SOM (Serviceable Obtainable Market): Achievable in 3-5 years
+   - Growth rate projections (CAGR)
+   - Market maturity stage (emerging, growth, mature, declining)
+
+2. COST STRUCTURE ANALYSIS
+   - COGS (Cost of Goods Sold): materials, labor, overhead
+   - Fixed costs: R&D, facilities, equipment
+   - Variable costs: per-unit production, distribution
+   - Customer acquisition cost (CAC)
+   - Lifetime value (LTV) and LTV:CAC ratio
+
+3. COMPETITIVE LANDSCAPE
+   - Direct competitors (same solution, same market)
+   - Indirect competitors (different solution, same problem)
+   - Substitutes (alternative ways to solve the problem)
+   - Barriers to entry (patents, capital, network effects)
+   - Competitive advantages (cost, quality, brand, distribution)
+
+4. ADOPTION BARRIERS
+   - Regulatory hurdles (approvals, certifications)
+   - Cultural resistance to change
+   - High switching costs for customers
+   - Lack of complementary infrastructure
+   - Economic conditions (recession, inflation)
+
+5. REVENUE MODELS
+   - One-time purchase (hardware, software license)
+   - Subscription (SaaS, recurring revenue)
+   - Freemium (free basic, paid premium)
+   - Marketplace/platform (transaction fees)
+   - Advertising or data monetization
+
+6. FINANCIAL METRICS
+   - Break-even point (units or time)
+   - Gross margin (revenue - COGS)
+   - Operating margin (after all expenses)
+   - Return on investment (ROI)
+   - Payback period for customers

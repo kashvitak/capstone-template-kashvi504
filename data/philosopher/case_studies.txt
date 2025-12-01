@@ -1,0 +1,199 @@
+Technology Ethics Case Studies and Historical Lessons
+
+I. PRIVACY AND SURVEILLANCE
+
+1. Cambridge Analytica Scandal (2018)
+   - Facebook data of 87 million users harvested without explicit consent
+   - Used for political advertising and microtargeting
+   - Lesson: Data minimization and explicit consent are essential
+   - Question for new tech: How is user data collected, stored, and used?
+
+2. Smart Home Devices and Privacy
+   - Always-on microphones raise surveillance concerns
+   - Data breaches can expose intimate details of daily life
+   - Third-party access to voice recordings
+   - Lesson: Privacy by design, local processing when possible
+   - Question: Does this technology respect the sanctity of private spaces?
+
+3. Facial Recognition Technology
+   - Used by law enforcement without public consent
+   - Higher error rates for minorities, leading to wrongful arrests
+   - Enables mass surveillance and tracking
+   - Lesson: Consider power asymmetries and bias in AI systems
+   - Question: Who controls the technology, and can it be misused?
+
+II. ALGORITHMIC BIAS AND FAIRNESS
+
+1. Criminal Justice AI Systems
+   - COMPAS recidivism prediction: Higher false positive rates for Black defendants
+   - Risk: Perpetuating and amplifying existing societal biases
+   - Lesson: Training data reflects historical inequalities
+   - Question: What biases might exist in our data and algorithms?
+
+2. Hiring Algorithms
+   - Amazon scrapped AI recruiting tool that discriminated against women
+   - Trained on historical data from male-dominated field
+   - Lesson: Past patterns don't equal future fairness
+   - Question: Does this tool democratize opportunity or concentrate advantage?
+
+3. Credit Scoring and Financial Services
+   - Alternative data (social media, app usage) can introduce proxy discrimination
+   - Lack of transparency makes it hard to contest decisions
+   - Lesson: Explainability and contestability are human rights
+   - Question: Can affected individuals understand and challenge the decision?
+
+III. ADDICTION AND PERSUASIVE DESIGN
+
+1. Social Media and Mental Health
+   - Infinite scroll, autoplay, and notifications designed to maximize engagement
+   - Correlation with increased anxiety, depression in teens
+   - Revenue model incentivizes addiction over well-being
+   - Lesson: User well-being should be a key design metric
+   - Question: Does this technology respect human autonomy or exploit vulnerabilities?
+
+2. Loot Boxes and Gaming
+   - Randomized rewards trigger gambling-like behaviors
+   - Targeted at children and adolescents
+   - Lesson: Vulnerable populations need extra protection
+   - Question: Are we designing ethically for our most vulnerable users?
+
+3. Dark Patterns in UX Design
+   - Misleading UI to trick users into unwanted actions
+   - Hard-to-find unsubscribe buttons, pre-checked boxes
+   - Lesson: Respect for user agency, not deception
+   - Question: Is our design genuinely user-centered?
+
+IV. ENVIRONMENTAL AND SUSTAINABILITY ETHICS
+
+1. E-Waste Crisis
+   - 50+ million tons of electronic waste annually
+   - Toxic materials (lead, mercury) pollute developing countries
+   - Planned obsolescence exacerbates the problem
+   - Lesson: Design for longevity, repairability, and recyclability
+   - Question: What is the full lifecycle impact of this product?
+
+2. Cryptocurrency and Energy Consumption
+   - Bitcoin mining uses ~150 TWh/year (comparable to Argentina)
+   - Carbon footprint of transactions questioned against benefits
+   - Lesson: Consider environmental externalities
+   - Question: Is the societal benefit proportional to the environmental cost?
+
+3. Rare Earth Mining for Electronics
+   - Smartphones and batteries require rare earth elements
+   - Mining causes severe environmental and human rights issues
+   - Lesson: Supply chain ethics matter
+   - Question: What are the hidden human and environmental costs?
+
+V. LABOR AND ECONOMIC JUSTICE
+
+1. Gig Economy and Worker Rights
+   - Uber, DoorDash classify workers as contractors, not employees
+   - No benefits, job security, or collective bargaining rights
+   - Lesson: Technology can disempower as well as empower
+   - Question: Does this innovation create good jobs or precarious work?
+
+2. Automation and Job Displacement
+   - Self-checkout, warehouse robots, autonomous vehicles
+   - Efficiency gains often don't translate to worker benefits
+   - Lesson: Consider distributional effects, not just aggregate gains
+   - Question: Who benefits from automation, and who bears the costs?
+
+3. Content Moderation Labor
+   - Low-paid workers exposed to traumatic content
+   - PTSD and mental health issues common
+   - Lesson: Hidden labor behind "seamless" technology
+   - Question: Are we creating harmful working conditions?
+
+VI. AUTONOMY AND INFORMED CONSENT
+
+1. Terms of Service (TOS) Problem
+   - Average TOS requires college-level reading, takes hours to read
+   - Users effectively cannot provide informed consent
+   - Lesson: Consent must be meaningful, not just legal cover
+   - Question: Can users realistically understand what they're agreeing to?
+
+2. Medical AI and Patient Autonomy
+   - Diagnostic algorithms may influence or override doctor judgment
+   - Patients may not understand AI role in their care
+   - Lesson: Transparency about AI involvement in critical decisions
+   - Question: Is the patient genuinely informed and empowered?
+
+3. Smart City Initiatives
+   - Residents often not consulted on surveillance infrastructure
+   - Data collected without opt-in consent
+   - Lesson: Democratic governance of public technology
+   - Question: Did affected communities have meaningful input?
+
+VII. DUAL-USE TECHNOLOGY
+
+1. Drones
+   - Civilian uses: Photography, delivery, agriculture
+   - Military uses: Surveillance, targeted killing
+   - Lesson: Technology is value-neutral, governance is not
+   - Question: How might this be weaponized or misused?
+
+2. Encryption
+   - Protects privacy, journalists, activists
+   - Also used by criminals, terrorists
+   - Lesson: Security vs. liberty tradeoffs
+   - Question: Who decides the balance?
+
+3. Gene Editing (CRISPR)
+   - Medical therapies for genetic diseases
+   - Potential for designer babies, eugenics
+   - Lesson: Scientific capability outpaces ethical consensus
+   - Question: What ethical guardrails should exist?
+
+VIII. RESPONSIBLE INNOVATION FRAMEWORKS
+
+1. IEEE Ethically Aligned Design
+   - Human rights as foundational
+   - Priority to well-being over profit
+   - Transparency and accountability
+   - Value-sensitive design processes
+
+2. EU AI Act Principles
+   - Risk-based approach (minimal, limited, high, unacceptable risk)
+   - Mandatory conformity assessment for high-risk AI
+   - Transparency requirements
+   - Human oversight mechanisms
+
+3. Value-Sensitive Design (VSD)
+   - Proactively consider stakeholder values
+   - Iterative process throughout development
+   - Empirical investigations with affected communities
+   - Conceptual, empirical, and technical investigations
+
+IX. ETHICAL DECISION-MAKING CHECKLIST
+
+For any new technology, ask:
+1. Who benefits? Who might be harmed?
+2. Are benefits and harms distributed fairly?
+3. What are second-order and long-term effects?
+4. Can users give meaningful informed consent?
+5. Does this respect or undermine human autonomy?
+6. What biases might be encoded in the system?
+7. Is there transparency and accountability?
+8. What are environmental and labor impacts?
+9. How could this be misused or weaponized?
+10. Would you want this technology used on you or your family?
+
+X. CASE STUDY: SOCIAL CREDIT SYSTEMS
+
+China's Social Credit System (2014-present)
+- Combines government and commercial data to rate citizens
+- Affects access to loans, travel, education, jobs
+- Rewards compliance, punishes dissent
+- Ethical issues:
+  • Mass surveillance and privacy invasion
+  • Social control and erosion of autonomy
+  • Lack of transparency, contestability
+  • Chilling effect on free expression
+  • Potential for abuse and mission creep
+
+Lessons for technology developers:
+- Technology reflects societal values and power structures
+- Features designed for one purpose can be repurposed
+- Scale magnifies both benefits and harms
+- Democratic oversight is essential for powerful technologies
+- Privacy and autonomy, once lost, are hard to regain

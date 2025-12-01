@@ -1,0 +1,44 @@
+Futures Thinking and Scenario Planning Framework
+
+1. SCENARIO PLANNING METHODOLOGY
+   - Identify driving forces (technology, society, environment, economy)
+   - Determine critical uncertainties
+   - Develop plausible scenarios (2-4 distinct futures)
+   - Assess implications for each scenario
+   - Identify robust strategies across scenarios
+
+2. TECHNOLOGY ADOPTION CURVES
+   - Innovators (2.5%): Risk-takers, early adopters
+   - Early Adopters (13.5%): Opinion leaders, willing to experiment
+   - Early Majority (34%): Pragmatic, need proven value
+   - Late Majority (34%): Skeptical, adopt when necessary
+   - Laggards (16%): Traditional, resist change
+
+3. SECOND-ORDER EFFECTS
+   - Direct impact → Immediate consequences
+   - Indirect impact → Cascading effects on related systems
+   - Feedback loops → Self-reinforcing or self-limiting dynamics
+   - Emergent properties → Unexpected system-level behaviors
+   - Tipping points → Threshold effects and phase transitions
+
+4. LONG-TERM TRENDS (2030-2050)
+   - Climate change and sustainability imperatives
+   - Aging populations in developed countries
+   - AI and automation transforming work
+   - Decentralization vs. centralization of power
+   - Biotech and human enhancement
+   - Space exploration and resource extraction
+
+5. RISK AND OPPORTUNITY PAIRS
+   - Disruption risk ↔ Market creation opportunity
+   - Regulatory risk ↔ First-mover advantage
+   - Technology obsolescence ↔ Platform dominance
+   - Social backlash ↔ Movement leadership
+   - Environmental impact ↔ Sustainability leadership
+
+6. VISIONARY QUESTIONS
+   - What becomes possible in 10 years that isn't today?
+   - What industries or jobs might disappear?
+   - What new social norms or behaviors might emerge?
+   - How might this reshape power structures?
+   - What are the utopian and dystopian extremes?
