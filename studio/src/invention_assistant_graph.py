@@ -253,11 +253,12 @@ def create_invention_graph() -> StateGraph:
     """Create the LangGraph StateGraph for invention analysis."""
     
     # Pre-initialize RAG system before building graph
-    try:
-        logging.info("Initializing RAG system for graph...")
-        get_rag_system()
-    except Exception as e:
-        logging.warning(f"Could not initialize RAG system: {e}")
+    # Pre-initialize RAG system before building graph
+    # try:
+    #     logging.info("Initializing RAG system for graph...")
+    #     get_rag_system()
+    # except Exception as e:
+    #     logging.warning(f"Could not initialize RAG system: {e}")
     
     # Create the graph
     workflow = StateGraph(InventionState)

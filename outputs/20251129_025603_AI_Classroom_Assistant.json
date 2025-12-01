@@ -1,0 +1,6 @@
+{
+  "status": "error",
+  "error": "attempted relative import with no known parent package",
+  "transcript": [],
+  "scorecard": {}
+}

@@ -108,7 +108,7 @@ I plan to excecute these steps to complete my project.
 - Explain how the project uses prompting, structured output, semantic search, RAG, tool calling, and LangGraph (state + nodes + graph).
 - Add usage instructions (how to run the graph, how to add more data) to the README or report file.
 
-[TODO] Step 12: Final cleanup and preparation for submission
+[DONE] Step 12: Final cleanup and preparation for submission
 - Review and refactor the code for readability and comments.
 - Ensure [TODO] markers are changed to [DONE] for all completed steps before final commit.
 - Check commit history shows work spread across at least two different dates.

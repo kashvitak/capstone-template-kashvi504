@@ -1,0 +1,19 @@
+{
+  "dependencies": [
+    "langgraph",
+    "langchain",
+    "faiss-cpu",
+    "openai",
+    "requests",
+    "python-dotenv",
+    "langchain_openai",
+    "langchain-community",
+    "tiktoken"
+  ],
+  "graphs": {
+    "invention_assistant": {
+      "path": "./src/invention_assistant_graph.py",
+      "variable": "graph"
+    }
+  }
+}

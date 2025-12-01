@@ -1,0 +1,8 @@
+{
+  "graphs": {
+    "invention_assistant": {
+      "path": "./src/invention_assistant_graph.py",
+      "variable": "graph"
+    }
+  }
+}
