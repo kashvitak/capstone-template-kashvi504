@@ -123,8 +123,11 @@ class AnalystRAG:
             List of relevant text chunks
         """
         if self.vector_store is None:
-            logging.warning(f"Vector store not initialized for {self.analyst_name}")
-            return []
+            logging.info(f"Vector store not initialized for {self.analyst_name}, attempting to build...")
+            success = self.build_vector_store()
+            if not success:
+                logging.warning(f"Failed to build vector store for {self.analyst_name}")
+                return []
             
         try:
             docs = self.vector_store.similarity_search(query, k=k)
