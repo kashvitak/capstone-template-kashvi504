@@ -75,18 +75,18 @@ I plan to excecute these steps to complete my project.
 - Download or copy text content into the project’s data/ folder (separate subfolders per analyst).
 - Normalize the content into plain text files ready for preprocessing.
 
-[TODO] Step 6: Preprocess and chunk the reference content
+[DONE] Step 6: Preprocess and chunk the reference content
 - Write a preprocessing script to clean and chunk the raw text (remove formatting noise).
 - Split content into semantically meaningful chunks suitable for retrieval.
 - Save the processed chunks in a structured format (e.g., JSON or plain text per analyst).
 
-[TODO] Step 7: Build a simple RAG pipeline for each analyst
+[DONE] Step 7: Build a simple RAG pipeline for each analyst
 - Create embeddings for the processed chunks using an embedding model.
 - Store the embeddings in a vector store (e.g., FAISS).
 - Implement a retrieval function that, given an analyst and a query, returns the top‑k relevant chunks.
 - Test retrieval independently with a few example queries.
 
-[TODO] Step 8: Integrate RAG into the LangGraph nodes
+[DONE] Step 8: Integrate RAG into the LangGraph nodes
 - Update each analyst node to call the retrieval function and include retrieved chunks in the prompt.
 - Ensure the analysis combines:
 (a) the user’s invention description, and
