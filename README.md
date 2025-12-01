@@ -103,7 +103,7 @@ I plan to excecute these steps to complete my project.
 - Run the full graph for each scenario and save example outputs in docs/ or notebooks/.
 - Adjust prompts, retrieval parameters, or graph flow based on test results to improve clarity and usefulness.
 
-[TODO] Step 11: Document the project and alignment with MAT496 concepts
+[DONE] Step 11: Document the project and alignment with MAT496 concepts
 - Write an Overview section describing the Invention Assistant and its purpose.
 - Explain how the project uses prompting, structured output, semantic search, RAG, tool calling, and LangGraph (state + nodes + graph).
 - Add usage instructions (how to run the graph, how to add more data) to the README or report file.
