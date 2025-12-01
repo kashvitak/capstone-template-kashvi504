@@ -102,7 +102,8 @@ class AnalystRAG:
             chunks = self.chunk_documents(documents)
             
             # Create embeddings and vector store
-            self.embeddings = OpenAIEmbeddings()
+            # Create embeddings (using text-embedding-3-small for cost/performance balance)
+            self.embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
             self.vector_store = FAISS.from_documents(chunks, self.embeddings)
             
             logging.info(f"Built vector store for {self.analyst_name} with {len(chunks)} chunks")
