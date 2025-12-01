@@ -93,12 +93,12 @@ I plan to excecute these steps to complete my project.
 (b) domain knowledge retrieved from that analyst’s data.
 - Verify that the state correctly stores enriched analyses using RAG‑enabled responses.
 
-[TODO] Step 9: Polish the transcript and scorecard structure
+[DONE] Step 9: Polish the transcript and scorecard structure
 - Design a clear, structured transcript format (dialogue style with citations).
 - Update the scorecard node prompt to always follow rubric dimensions (Technical Rigor, Originality, Feasibility, Impact).
 - Add section headings and bullet points so the output looks like a professional evaluation report.
 
-[TODO] Step 10: Create sample scenarios and test the full pipeline
+[DONE] Step 10: Create sample scenarios and test the full pipeline
 - Prepare multiple sample inventions (e.g., AI classroom assistant, sustainable energy device, medical diagnostic tool).
 - Run the full graph for each scenario and save example outputs in docs/ or notebooks/.
 - Adjust prompts, retrieval parameters, or graph flow based on test results to improve clarity and usefulness.

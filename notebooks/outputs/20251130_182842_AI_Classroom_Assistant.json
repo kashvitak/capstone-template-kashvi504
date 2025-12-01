@@ -1,0 +1,221 @@
+{
+  "transcript": [
+    {
+      "role": "Engineer",
+      "message": "This is a mock engineer assessment: concept seems plausible; main hazards are materials sourcing and regulatory compliance.",
+      "citations": []
+    },
+    {
+      "role": "Engineer",
+      "message": "This is a mock engineer assessment: concept seems plausible; main hazards are materials sourcing and regulatory compliance.",
+      "citations": []
+    },
+    {
+      "role": "Engineer",
+      "message": "This is a mock engineer assessment: concept seems plausible; main hazards are materials sourcing and regulatory compliance.",
+      "citations": []
+    },
+    {
+      "role": "Engineer",
+      "message": "This is a mock engineer assessment: concept seems plausible; main hazards are materials sourcing and regulatory compliance.",
+      "citations": []
+    }
+  ],
+  "scorecard": {
+    "technical_rigor": {
+      "score": 3.0,
+      "evidence": [
+        "Mock: basic technical assessment",
+        "Mock: basic technical assessment",
+        "Mock: basic technical assessment"
+      ]
+    },
+    "originality": {
+      "score": 3.5,
+      "evidence": [
+        "Mock: some novel combination of ideas",
+        "Mock: some novel combination of ideas",
+        "Mock: some novel combination of ideas"
+      ]
+    },
+    "feasibility": {
+      "score": 3.0,
+      "evidence": [
+        "Mock: feasible with moderate engineering effort",
+        "Mock: feasible with moderate engineering effort",
+        "Mock: feasible with moderate engineering effort"
+      ]
+    },
+    "impact": {
+      "score": 3.5,
+      "evidence": [
+        "Mock: positive social impact potential",
+        "Mock: positive social impact potential",
+        "Mock: positive social impact potential"
+      ]
+    },
+    "overall": {
+      "decision": "revise",
+      "rationale": "Mixed evaluation. Address concerns raised by analysts before proceeding."
+    }
+  },
+  "analyses": {
+    "engineer": {
+      "transcript": [
+        {
+          "role": "Engineer",
+          "message": "This is a mock engineer assessment: concept seems plausible; main hazards are materials sourcing and regulatory compliance.",
+          "citations": []
+        }
+      ],
+      "scorecard": {
+        "technical_rigor": {
+          "score": 3.0,
+          "evidence": [
+            "Mock: basic technical assessment"
+          ]
+        },
+        "originality": {
+          "score": 3.5,
+          "evidence": [
+            "Mock: some novel combination of ideas"
+          ]
+        },
+        "feasibility": {
+          "score": 3.0,
+          "evidence": [
+            "Mock: feasible with moderate engineering effort"
+          ]
+        },
+        "impact": {
+          "score": 3.5,
+          "evidence": [
+            "Mock: positive social impact potential"
+          ]
+        },
+        "overall": {
+          "decision": "revise",
+          "rationale": "Mock: proceed with experimental prototype and risk mitigation"
+        }
+      }
+    },
+    "visionary": {
+      "transcript": [
+        {
+          "role": "Engineer",
+          "message": "This is a mock engineer assessment: concept seems plausible; main hazards are materials sourcing and regulatory compliance.",
+          "citations": []
+        }
+      ],
+      "scorecard": {
+        "technical_rigor": {
+          "score": 3.0,
+          "evidence": [
+            "Mock: basic technical assessment"
+          ]
+        },
+        "originality": {
+          "score": 3.5,
+          "evidence": [
+            "Mock: some novel combination of ideas"
+          ]
+        },
+        "feasibility": {
+          "score": 3.0,
+          "evidence": [
+            "Mock: feasible with moderate engineering effort"
+          ]
+        },
+        "impact": {
+          "score": 3.5,
+          "evidence": [
+            "Mock: positive social impact potential"
+          ]
+        },
+        "overall": {
+          "decision": "revise",
+          "rationale": "Mock: proceed with experimental prototype and risk mitigation"
+        }
+      }
+    },
+    "economist": {
+      "transcript": [
+        {
+          "role": "Engineer",
+          "message": "This is a mock engineer assessment: concept seems plausible; main hazards are materials sourcing and regulatory compliance.",
+          "citations": []
+        }
+      ],
+      "scorecard": {
+        "technical_rigor": {
+          "score": 3.0,
+          "evidence": [
+            "Mock: basic technical assessment"
+          ]
+        },
+        "originality": {
+          "score": 3.5,
+          "evidence": [
+            "Mock: some novel combination of ideas"
+          ]
+        },
+        "feasibility": {
+          "score": 3.0,
+          "evidence": [
+            "Mock: feasible with moderate engineering effort"
+          ]
+        },
+        "impact": {
+          "score": 3.5,
+          "evidence": [
+            "Mock: positive social impact potential"
+          ]
+        },
+        "overall": {
+          "decision": "revise",
+          "rationale": "Mock: proceed with experimental prototype and risk mitigation"
+        }
+      }
+    },
+    "philosopher": {
+      "transcript": [
+        {
+          "role": "Engineer",
+          "message": "This is a mock engineer assessment: concept seems plausible; main hazards are materials sourcing and regulatory compliance.",
+          "citations": []
+        }
+      ],
+      "scorecard": {
+        "technical_rigor": {
+          "score": 3.0,
+          "evidence": [
+            "Mock: basic technical assessment"
+          ]
+        },
+        "originality": {
+          "score": 3.5,
+          "evidence": [
+            "Mock: some novel combination of ideas"
+          ]
+        },
+        "feasibility": {
+          "score": 3.0,
+          "evidence": [
+            "Mock: feasible with moderate engineering effort"
+          ]
+        },
+        "impact": {
+          "score": 3.5,
+          "evidence": [
+            "Mock: positive social impact potential"
+          ]
+        },
+        "overall": {
+          "decision": "revise",
+          "rationale": "Mock: proceed with experimental prototype and risk mitigation"
+        }
+      }
+    }
+  },
+  "errors": null
+}
