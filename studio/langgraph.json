@@ -11,9 +11,7 @@
     "tiktoken"
   ],
   "graphs": {
-    "invention_assistant": {
-      "path": "./src/invention_assistant_graph.py",
-      "variable": "graph"
-    }
-  }
+    "invention_assistant": "./src/invention_assistant_graph.py:graph"
+  },
+  "env": ".env"
 }
