@@ -115,6 +115,22 @@ I plan to excecute these steps to complete my project.
 - Verify all required files (code, plan, report, sample outputs) are pushed to the forked repository.
 
 
+## Running the LangGraph in Studio
+
+You can visualize and interact with the Invention Assistant graph in LangGraph Studio:
+
+1. Navigate to the studio directory:
+   ```bash
+   cd studio
+   ```
+
+2. Run the LangGraph development server:
+   ```bash
+   langgraph dev
+   ```
+
+3. Open your browser and navigate to the provided local URL (typically `http://localhost:8000`) to see the graph visualization and interact with it in the studio interface.
+
 
 ## Conclusion:
 

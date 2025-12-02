@@ -34,15 +34,17 @@ class InventionState(TypedDict):
     transcript: Annotated[List[Dict], add]  # Combined transcript (uses add reducer)
     aggregated_scorecard: Dict[str, Any]  # Final aggregated scorecard
     errors: Annotated[List[str], add]  # Any errors encountered
+    feedback: str  # Feedback for refinement cycles
 
 
-def build_prompt_for_persona(persona: str, invention: Dict[str, Any], use_rag: bool = True) -> str:
+def build_prompt_for_persona(persona: str, invention: Dict[str, Any], use_rag: bool = True, feedback: str = "") -> str:
     """Build prompt for a specific persona with optional RAG context.
     
     Args:
         persona: Name of the analyst persona
         invention: Invention description dict
         use_rag: Whether to retrieve and include context from RAG
+        feedback: Optional feedback from previous rounds (for cyclic refinement)
     """
     description = invention.get("description") or invention.get("title") or ""
     
@@ -60,6 +62,10 @@ def build_prompt_for_persona(persona: str, invention: Dict[str, Any], use_rag: b
     
     # Build the full prompt with context
     full_description = description + context
+    
+    # Append feedback if present
+    if feedback:
+        full_description += f"\n\nCRITICAL FEEDBACK FROM PREVIOUS ROUND: {feedback}\nPlease refine your analysis to address this feedback."
     
     if persona == "engineer":
         return prompts.ENGINEER_PROMPT.format(description=full_description)
@@ -116,7 +122,7 @@ def engineer_node(state: InventionState) -> Dict[str, Any]:
     """Engineer analyst node."""
     try:
         logging.info("Engineer node: Analyzing invention")
-        prompt = build_prompt_for_persona("engineer", state["invention"])
+        prompt = build_prompt_for_persona("engineer", state["invention"], feedback=state.get("feedback", ""))
         resp = utils.llm_call(prompt)
         analysis = parse_llm_response(resp, "engineer")
         
@@ -136,7 +142,7 @@ def philosopher_node(state: InventionState) -> Dict[str, Any]:
     """Philosopher analyst node."""
     try:
         logging.info("Philosopher node: Analyzing invention")
-        prompt = build_prompt_for_persona("philosopher", state["invention"])
+        prompt = build_prompt_for_persona("philosopher", state["invention"], feedback=state.get("feedback", ""))
         resp = utils.llm_call(prompt)
         analysis = parse_llm_response(resp, "philosopher")
         
@@ -156,7 +162,7 @@ def economist_node(state: InventionState) -> Dict[str, Any]:
     """Economist analyst node."""
     try:
         logging.info("Economist node: Analyzing invention")
-        prompt = build_prompt_for_persona("economist", state["invention"])
+        prompt = build_prompt_for_persona("economist", state["invention"], feedback=state.get("feedback", ""))
         resp = utils.llm_call(prompt)
         analysis = parse_llm_response(resp, "economist")
         
@@ -176,7 +182,7 @@ def visionary_node(state: InventionState) -> Dict[str, Any]:
     """Visionary analyst node."""
     try:
         logging.info("Visionary node: Analyzing invention")
-        prompt = build_prompt_for_persona("visionary", state["invention"])
+        prompt = build_prompt_for_persona("visionary", state["invention"], feedback=state.get("feedback", ""))
         resp = utils.llm_call(prompt)
         analysis = parse_llm_response(resp, "visionary")
         
@@ -248,17 +254,40 @@ def aggregate_node(state: InventionState) -> Dict[str, Any]:
     }
 
 
+def refine_node(state: InventionState) -> Dict[str, Any]:
+    """Generate feedback and prepare for refinement cycle."""
+    logging.info("Refine node: Generating feedback for analysts")
+    return {
+        "feedback": "The previous analysis resulted in a REJECT decision. Please re-evaluate with a focus on mitigating the identified risks and improving feasibility."
+    }
+
+
+def check_quality(state: InventionState) -> str:
+    """Check if the analysis quality is sufficient or needs refinement."""
+    scorecard = state.get("aggregated_scorecard", {})
+    overall = scorecard.get("overall", {})
+    
+    # If we already have feedback, it means we already refined once. Stop to avoid infinite loops.
+    if state.get("feedback"):
+        return "end"
+        
+    # If decision is 'reject', trigger refinement
+    if overall.get("decision") == "reject":
+        return "refine"
+        
+    return "end"
+
+
 # Build the graph
-def create_invention_graph() -> StateGraph:
+def create_invention_graph(checkpointer=None) -> StateGraph:
     """Create the LangGraph StateGraph for invention analysis."""
     
     # Pre-initialize RAG system before building graph
-    # Pre-initialize RAG system before building graph
-    # try:
-    #     logging.info("Initializing RAG system for graph...")
-    #     get_rag_system()
-    # except Exception as e:
-    #     logging.warning(f"Could not initialize RAG system: {e}")
+    try:
+        logging.info("Initializing RAG system for graph...")
+        get_rag_system()
+    except Exception as e:
+        logging.warning(f"Could not initialize RAG system: {e}")
     
     # Create the graph
     workflow = StateGraph(InventionState)
@@ -269,6 +298,7 @@ def create_invention_graph() -> StateGraph:
     workflow.add_node("economist", economist_node)
     workflow.add_node("visionary", visionary_node)
     workflow.add_node("aggregate", aggregate_node)
+    workflow.add_node("refine", refine_node)
     
     # Add edges - all analysts run in parallel from START
     workflow.add_edge(START, "engineer")
@@ -282,10 +312,27 @@ def create_invention_graph() -> StateGraph:
     workflow.add_edge("economist", "aggregate")
     workflow.add_edge("visionary", "aggregate")
     
-    # Aggregate flows to END
-    workflow.add_edge("aggregate", END)
+    # Aggregate flows to conditional check
+    workflow.add_conditional_edges(
+        "aggregate",
+        check_quality,
+        {
+            "refine": "refine",
+            "end": END
+        }
+    )
     
-    return workflow.compile()
+    # Refine node fans out to all analysts again
+    workflow.add_edge("refine", "engineer")
+    workflow.add_edge("refine", "philosopher")
+    workflow.add_edge("refine", "economist")
+    workflow.add_edge("refine", "visionary")
+    
+    # Compile the graph with an interrupt before aggregation
+    return workflow.compile(
+        checkpointer=checkpointer,
+        interrupt_before=["aggregate"]
+    )
 
 
 # Expose the compiled graph for LangGraph Studio
@@ -299,7 +346,12 @@ def run_all_analysts_parallel(invention: Dict[str, Any]) -> Dict[str, Any]:
     This function replaces the old threading-based implementation with the new
     LangGraph-based one, while maintaining the same interface.
     """
-    graph = create_invention_graph()
+    import uuid
+    from langgraph.checkpoint.memory import MemorySaver
+    
+    # Use MemorySaver for local execution
+    checkpointer = MemorySaver()
+    graph = create_invention_graph(checkpointer=checkpointer)
     
     # Initialize state
     initial_state: InventionState = {
@@ -313,8 +365,28 @@ def run_all_analysts_parallel(invention: Dict[str, Any]) -> Dict[str, Any]:
         "errors": []
     }
     
-    # Run the graph
-    final_state = graph.invoke(initial_state)
+    # Create a unique thread ID for this run
+    thread_id = str(uuid.uuid4())
+    config = {"configurable": {"thread_id": thread_id}}
+    
+    logging.info(f"Starting graph execution with thread_id: {thread_id}")
+    
+    # Run the graph - it will pause before 'aggregate' due to interrupt_before
+    # We use stream() to handle updates, but invoke() also works if we catch the pause
+    # For simplicity in this wrapper, we'll just invoke it.
+    
+    # First run: Start -> Analysts -> Pause
+    logging.info("Running analysts (Engineer, Philosopher, Economist, Visionary)...")
+    graph.invoke(initial_state, config=config)
+    
+    # At this point, the graph is paused. 
+    # In a real app, we would stop here and wait for user input.
+    # For this demo function, we'll simulate "Human Approval" and continue.
+    logging.info("Graph paused for human review. Resuming execution...")
+    
+    # Second run: Resume -> Aggregate -> End
+    # We pass None as input to resume from the current state
+    final_state = graph.invoke(None, config=config)
     
     # Format output to match expected structure
     return {
