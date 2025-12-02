@@ -237,7 +237,7 @@ def aggregate_node(state: InventionState) -> Dict[str, Any]:
     if overall_avg >= 3.5:
         decision = "approve"
         rationale = "Overall strong evaluation across analysts. Proceed with development."
-    elif overall_avg >= 2.5:
+    elif overall_avg >= 3.0:
         decision = "revise"
         rationale = "Mixed evaluation. Address concerns raised by analysts before proceeding."
     else:
